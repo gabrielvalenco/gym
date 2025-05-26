@@ -59,6 +59,9 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.7.6")
     implementation("androidx.navigation:navigation-ui:2.7.6")
     
+    // MPAndroidChart para gráficos visuais
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

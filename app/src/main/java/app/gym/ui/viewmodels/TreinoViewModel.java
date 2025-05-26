@@ -20,6 +20,7 @@ public class TreinoViewModel extends AndroidViewModel {
     private final LiveData<List<Treino>> todosTreinos;
     private final LiveData<List<Treino>> treinosAtivos;
     private final LiveData<Integer> quantidadeTreinosAtivos;
+    private LiveData<Integer> quantidadeTreinos;
     
     public TreinoViewModel(@NonNull Application application) {
         super(application);
@@ -27,6 +28,7 @@ public class TreinoViewModel extends AndroidViewModel {
         todosTreinos = repository.getTodosTreinos();
         treinosAtivos = repository.getTreinosAtivos();
         quantidadeTreinosAtivos = repository.getQuantidadeTreinosAtivos();
+        quantidadeTreinos = repository.getQuantidadeTreinos();
     }
     
     // Métodos para acesso aos dados
@@ -52,6 +54,10 @@ public class TreinoViewModel extends AndroidViewModel {
     
     public LiveData<Integer> getQuantidadeTreinosAtivos() {
         return quantidadeTreinosAtivos;
+    }
+    
+    public LiveData<Integer> getQuantidadeTreinos() {
+        return quantidadeTreinos;
     }
     
     // Métodos para operações CRUD

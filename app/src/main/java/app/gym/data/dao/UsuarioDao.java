@@ -44,4 +44,7 @@ public interface UsuarioDao {
     
     @Query("SELECT COUNT(*) FROM usuarios WHERE ativo = 1")
     LiveData<Integer> contarUsuariosAtivos();
+    
+    @Query("SELECT COUNT(*) FROM usuarios")
+    LiveData<Integer> contarTodosUsuarios();
 }

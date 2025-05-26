@@ -20,6 +20,7 @@ public class ExercicioViewModel extends AndroidViewModel {
     private final LiveData<List<Exercicio>> todosExercicios;
     private final LiveData<List<Exercicio>> exerciciosAtivos;
     private final LiveData<Integer> quantidadeExerciciosAtivos;
+    private LiveData<Integer> quantidadeExercicios;
     
     public ExercicioViewModel(@NonNull Application application) {
         super(application);
@@ -27,6 +28,7 @@ public class ExercicioViewModel extends AndroidViewModel {
         todosExercicios = repository.getTodosExercicios();
         exerciciosAtivos = repository.getExerciciosAtivos();
         quantidadeExerciciosAtivos = repository.getQuantidadeExerciciosAtivos();
+        quantidadeExercicios = repository.getQuantidadeExercicios();
     }
     
     // Métodos para acesso aos dados
@@ -52,6 +54,10 @@ public class ExercicioViewModel extends AndroidViewModel {
     
     public LiveData<Integer> getQuantidadeExerciciosAtivos() {
         return quantidadeExerciciosAtivos;
+    }
+    
+    public LiveData<Integer> getQuantidadeExercicios() {
+        return quantidadeExercicios;
     }
     
     // Métodos para operações CRUD

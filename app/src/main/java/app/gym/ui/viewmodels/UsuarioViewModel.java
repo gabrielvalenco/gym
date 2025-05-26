@@ -20,6 +20,7 @@ public class UsuarioViewModel extends AndroidViewModel {
     private final LiveData<List<Usuario>> todosUsuarios;
     private final LiveData<List<Usuario>> usuariosAtivos;
     private final LiveData<Integer> quantidadeUsuariosAtivos;
+    private LiveData<Integer> quantidadeUsuarios;
     
     public UsuarioViewModel(@NonNull Application application) {
         super(application);
@@ -27,6 +28,7 @@ public class UsuarioViewModel extends AndroidViewModel {
         todosUsuarios = repository.getTodosUsuarios();
         usuariosAtivos = repository.getUsuariosAtivos();
         quantidadeUsuariosAtivos = repository.getQuantidadeUsuariosAtivos();
+        quantidadeUsuarios = repository.getQuantidadeUsuarios();
     }
     
     // Métodos para acesso aos dados
@@ -48,6 +50,10 @@ public class UsuarioViewModel extends AndroidViewModel {
     
     public LiveData<Integer> getQuantidadeUsuariosAtivos() {
         return quantidadeUsuariosAtivos;
+    }
+    
+    public LiveData<Integer> getQuantidadeUsuarios() {
+        return quantidadeUsuarios;
     }
     
     // Métodos para operações CRUD

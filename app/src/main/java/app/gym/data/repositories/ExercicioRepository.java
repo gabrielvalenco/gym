@@ -19,6 +19,7 @@ public class ExercicioRepository {
     private final LiveData<List<Exercicio>> todosExercicios;
     private final LiveData<List<Exercicio>> exerciciosAtivos;
     private final LiveData<Integer> quantidadeExerciciosAtivos;
+    private final LiveData<Integer> quantidadeExercicios;
     
     public ExercicioRepository(Application application) {
         AppDatabase database = AppDatabase.getDatabase(application);
@@ -26,6 +27,7 @@ public class ExercicioRepository {
         todosExercicios = exercicioDao.obterTodos();
         exerciciosAtivos = exercicioDao.obterTodosAtivos();
         quantidadeExerciciosAtivos = exercicioDao.contarExerciciosAtivos();
+        quantidadeExercicios = exercicioDao.contarTodosExercicios();
     }
     
     // Métodos para recuperar dados
@@ -51,6 +53,10 @@ public class ExercicioRepository {
     
     public LiveData<Integer> getQuantidadeExerciciosAtivos() {
         return quantidadeExerciciosAtivos;
+    }
+    
+    public LiveData<Integer> getQuantidadeExercicios() {
+        return quantidadeExercicios;
     }
     
     // Métodos para operações CRUD

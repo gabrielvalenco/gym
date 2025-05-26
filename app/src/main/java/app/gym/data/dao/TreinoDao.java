@@ -47,4 +47,7 @@ public interface TreinoDao {
     
     @Query("SELECT COUNT(*) FROM treinos WHERE ativo = 1")
     LiveData<Integer> contarTreinosAtivos();
+    
+    @Query("SELECT COUNT(*) FROM treinos")
+    LiveData<Integer> contarTodosTreinos();
 }

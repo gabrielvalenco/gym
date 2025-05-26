@@ -19,6 +19,7 @@ public class UsuarioRepository {
     private final LiveData<List<Usuario>> todosUsuarios;
     private final LiveData<List<Usuario>> usuariosAtivos;
     private final LiveData<Integer> quantidadeUsuariosAtivos;
+    private final LiveData<Integer> quantidadeUsuarios;
     
     public UsuarioRepository(Application application) {
         AppDatabase database = AppDatabase.getDatabase(application);
@@ -26,6 +27,7 @@ public class UsuarioRepository {
         todosUsuarios = usuarioDao.obterTodos();
         usuariosAtivos = usuarioDao.obterTodosAtivos();
         quantidadeUsuariosAtivos = usuarioDao.contarUsuariosAtivos();
+        quantidadeUsuarios = usuarioDao.contarTodosUsuarios();
     }
     
     // Métodos para recuperar dados
@@ -47,6 +49,10 @@ public class UsuarioRepository {
     
     public LiveData<Integer> getQuantidadeUsuariosAtivos() {
         return quantidadeUsuariosAtivos;
+    }
+    
+    public LiveData<Integer> getQuantidadeUsuarios() {
+        return quantidadeUsuarios;
     }
     
     // Métodos para operações CRUD

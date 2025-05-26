@@ -19,6 +19,7 @@ public class TreinoRepository {
     private final LiveData<List<Treino>> todosTreinos;
     private final LiveData<List<Treino>> treinosAtivos;
     private final LiveData<Integer> quantidadeTreinosAtivos;
+    private final LiveData<Integer> quantidadeTreinos;
     
     public TreinoRepository(Application application) {
         AppDatabase database = AppDatabase.getDatabase(application);
@@ -26,6 +27,7 @@ public class TreinoRepository {
         todosTreinos = treinoDao.obterTodos();
         treinosAtivos = treinoDao.obterTodosAtivos();
         quantidadeTreinosAtivos = treinoDao.contarTreinosAtivos();
+        quantidadeTreinos = treinoDao.contarTodosTreinos();
     }
     
     // Métodos para recuperar dados
@@ -51,6 +53,10 @@ public class TreinoRepository {
     
     public LiveData<Integer> getQuantidadeTreinosAtivos() {
         return quantidadeTreinosAtivos;
+    }
+    
+    public LiveData<Integer> getQuantidadeTreinos() {
+        return quantidadeTreinos;
     }
     
     // Métodos para operações CRUD
