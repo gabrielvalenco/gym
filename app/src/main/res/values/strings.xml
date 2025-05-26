@@ -1,3 +1,53 @@
 <resources>
-    <string name="app_name">gym</string>
+    <string name="app_name">GYM Fitness</string>
+    
+    <!-- Strings de navegação -->
+    <string name="navigation_drawer_open">Abrir menu de navegação</string>
+    <string name="navigation_drawer_close">Fechar menu de navegação</string>
+    
+    <!-- Títulos das telas -->
+    <string name="title_home">Início</string>
+    <string name="title_usuarios">Usuários</string>
+    <string name="title_exercicios">Exercícios</string>
+    <string name="title_treinos">Treinos</string>
+    <string name="title_perfil_fisico">Perfil Físico</string>
+    <string name="title_detalhe_usuario">Detalhes do Usuário</string>
+    <string name="title_detalhe_exercicio">Detalhes do Exercício</string>
+    <string name="title_detalhe_treino">Detalhes do Treino</string>
+    <string name="title_treinos_usuario">Treinos do Usuário</string>
+    
+    <!-- Botões e ações -->
+    <string name="action_save">Salvar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_add">Adicionar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_confirm">Confirmar</string>
+    
+    <!-- Mensagens -->
+    <string name="msg_success_save">Salvo com sucesso</string>
+    <string name="msg_error_save">Erro ao salvar</string>
+    <string name="msg_confirm_delete">Confirma a exclusão?</string>
+    <string name="msg_empty_list">Nenhum item encontrado</string>
+    
+    <!-- Campos de formulário -->
+    <string name="field_nome">Nome</string>
+    <string name="field_email">E-mail</string>
+    <string name="field_telefone">Telefone</string>
+    <string name="field_data_nascimento">Data de Nascimento</string>
+    <string name="field_genero">Gênero</string>
+    <string name="field_altura">Altura (m)</string>
+    <string name="field_peso">Peso (kg)</string>
+    <string name="field_gordura">% de Gordura</string>
+    <string name="field_objetivo">Objetivo</string>
+    <string name="field_restricoes">Restrições de Saúde</string>
+    <string name="field_descricao">Descrição</string>
+    <string name="field_grupo_muscular">Grupo Muscular</string>
+    <string name="field_equipamento">Equipamento</string>
+    <string name="field_nivel">Nível de Dificuldade</string>
+    <string name="field_instrucoes">Instruções</string>
+    <string name="field_duracao">Duração (minutos)</string>
+    <string name="field_frequencia">Frequência Semanal</string>
+    <string name="field_status">Status</string>
+    <string name="field_observacoes">Observações</string>
 </resources>
