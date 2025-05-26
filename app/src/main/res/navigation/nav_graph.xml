@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="app.gym.ui.fragments.HomeFragment"
+        android:label="Início"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_usuariosFragment"
+            app:destination="@id/usuariosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_exerciciosFragment"
+            app:destination="@id/exerciciosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_treinosFragment"
+            app:destination="@id/treinosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/usuariosFragment"
+        android:name="app.gym.ui.fragments.UsuariosFragment"
+        android:label="Usuários"
+        tools:layout="@layout/fragment_usuarios">
+        <action
+            android:id="@+id/action_usuariosFragment_to_usuarioDetailFragment"
+            app:destination="@id/usuarioDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/usuarioDetailFragment"
+        android:name="app.gym.ui.fragments.UsuarioDetailFragment"
+        android:label="Detalhes do Usuário"
+        tools:layout="@layout/fragment_usuario_detail">
+        <argument
+            android:name="usuarioId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_usuarioDetailFragment_to_perfilFisicoFragment"
+            app:destination="@id/perfilFisicoFragment" />
+        <action
+            android:id="@+id/action_usuarioDetailFragment_to_usuarioTreinosFragment"
+            app:destination="@id/usuarioTreinosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/perfilFisicoFragment"
+        android:name="app.gym.ui.fragments.PerfilFisicoFragment"
+        android:label="Perfil Físico"
+        tools:layout="@layout/fragment_perfil_fisico">
+        <argument
+            android:name="usuarioId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exerciciosFragment"
+        android:name="app.gym.ui.fragments.ExerciciosFragment"
+        android:label="Exercícios"
+        tools:layout="@layout/fragment_exercicios">
+        <action
+            android:id="@+id/action_exerciciosFragment_to_exercicioDetailFragment"
+            app:destination="@id/exercicioDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exercicioDetailFragment"
+        android:name="app.gym.ui.fragments.ExercicioDetailFragment"
+        android:label="Detalhes do Exercício"
+        tools:layout="@layout/fragment_exercicio_detail">
+        <argument
+            android:name="exercicioId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/treinosFragment"
+        android:name="app.gym.ui.fragments.TreinosFragment"
+        android:label="Treinos"
+        tools:layout="@layout/fragment_treinos">
+        <action
+            android:id="@+id/action_treinosFragment_to_treinoDetailFragment"
+            app:destination="@id/treinoDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/treinoDetailFragment"
+        android:name="app.gym.ui.fragments.TreinoDetailFragment"
+        android:label="Detalhes do Treino"
+        tools:layout="@layout/fragment_treino_detail">
+        <argument
+            android:name="treinoId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_treinoDetailFragment_to_treinoExerciciosFragment"
+            app:destination="@id/treinoExerciciosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/usuarioTreinosFragment"
+        android:name="app.gym.ui.fragments.UsuarioTreinosFragment"
+        android:label="Treinos do Usuário"
+        tools:layout="@layout/fragment_usuario_treinos">
+        <argument
+            android:name="usuarioId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/treinoExerciciosFragment"
+        android:name="app.gym.ui.fragments.TreinoExerciciosFragment"
+        android:label="Exercícios do Treino"
+        tools:layout="@layout/fragment_treino_exercicios">
+        <argument
+            android:name="treinoId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+</navigation>
